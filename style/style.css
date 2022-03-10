@@ -41,7 +41,7 @@ label {
 }
 
 .main-container {
-    width: 90%;
+    width: 100%;
     padding-top: 50px;
     margin: auto;
     display: flex;
