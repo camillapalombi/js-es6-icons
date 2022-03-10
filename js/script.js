@@ -177,5 +177,24 @@ function randomBetween(max, min) {
 arrIcons.forEach((icon) => icon.color = randomColor());
 
 
+//BONUS POPOLARE SELECT DIMAMICAMENTE
+
+const arrOptions = []; //inizializzo array vuoto
+
+arrIcons.forEach(icon => { //scorri ogni elemento di arrIcons
+
+	if (!arrOptions.includes(icon.type)) { //se l'arrOptions non include il tipo di icona inseriscila, altrimenti niente
+		arrOptions.push(icon.type);
+	}
+});
+
+arrOptions.forEach(option => { //per ogni elemento di arrOptions:
+	let htmlOption = document.createElement('option'); //crea un tag option
+	htmlOption.innerHTML = option; //scrivici dentro l'opzione (user,animal,vegetable)
+	htmlOption.value = option; //il valore sarà uguale alla opzione
+	selectIconsType.append(htmlOption); //appendi le option dentro la select
+});
+
+
 
 
