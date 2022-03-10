@@ -154,5 +154,28 @@ selectIconsType.addEventListener("change", function () {
 	});
 
 
+// BONUS COLORI RANDOM
+
+//funzione creazione codici colore random
+function randomColor() {
+	let alphanumeriCaracters = '0123456789ABCDEF';
+	let prefix = '#';
+
+	for (let i = 0; i < 6; i++) {
+		prefix += alphanumeriCaracters[randomBetween(15, 0)]; //richiamo funzione numeri random
+	}
+	return prefix;
+}
+
+//funzione creazione numeri random tra due numeri
+function randomBetween(max, min) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+//richiamo funzione colore
+arrIcons.forEach((icon) => icon.color = randomColor());
+
+
 
 
